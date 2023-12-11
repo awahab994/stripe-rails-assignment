@@ -22,6 +22,9 @@ rails s
 # To run test cases
 bundle exec rspec spec/services/stripe_service_spec.rb
 
+# Url of stripe webhook would be
+api/v1/stripe_webhook
+
 ```
 
 ## Brief how things are implemented
