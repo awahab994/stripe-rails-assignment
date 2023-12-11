@@ -1,24 +1,32 @@
-# README
+# Stripe Rails Assignment
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
 
-* Ruby version
+## Installation
+You need to create **.env** file with these three variables
 
-* System dependencies
+```bash
+STRIPE_PUBLISHABLE_KEY=
+STRIPE_SECRET_KEY=
+STRIPE_WEBHOOK_SECRET=
+```
 
-* Configuration
+## How to Run
 
-* Database creation
+```bash
+bundle install
 
-* Database initialization
+# to start the serve
+rails s 
 
-* How to run the test suite
+# To run test cases
+bundle exec rspec spec/services/stripe_service_spec.rb
 
-* Services (job queues, cache servers, search engines, etc.)
+```
 
-* Deployment instructions
+## Brief how things are implemented
 
-* ...
+- I write down a stripe service as a wrapper on Stripe gem. that will handle the Create and Refund charge.
+- Implement the Stripe Web hook and tested as well with events i added the method how we can get the event and make sure it is correct and authenticated event We can handle it many ways like store Data in DB but for now there is the Web hook verification and implementation.
+- I write down the test cases as well with the 1 true and 1 false case but we can eventually write down more i comment the list of false cases that we can handled there.
+
